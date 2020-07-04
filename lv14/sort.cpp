@@ -9,10 +9,13 @@ int main()
 	vector<int> vec(1001);
 	int num;
 	cin>>num;
-	
+
 	for(int i=1; i<=num;i++)
 	{
 		cin>>vec[i];
+
+		if(vec[i]>1000)
+			exit(0);
 	}
 
 	sort(vec.begin(),vec.end());
