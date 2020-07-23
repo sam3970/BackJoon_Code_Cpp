@@ -4,6 +4,8 @@
 
 using namespace std;
 
+/* notice : 1,000,000으로 나눈 fibonacci numbers의 반복되는 주기는 1,500,000 */
+
 long long arr[1500001];
 int limit = 1000000;
 
