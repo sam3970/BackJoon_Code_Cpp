@@ -64,5 +64,5 @@ int main()
 	else 
 		cout << "NE\n";
 	}
-	return 0;
+	//return 0;
 }
