@@ -1,6 +1,6 @@
 #include <iostream>
-#include <cstring>
-#include <cstdlib>
+#include <string>
+//#include <cstdlib>
 
 using namespace std;
 
@@ -25,7 +25,8 @@ void check_pt()
 
 int main()
 {
-	cin>>num>>check_txt;
+	cin>>num;
+	cin>>check_txt;
 
 	check_pt();
 
@@ -35,7 +36,7 @@ int main()
 		cin>>txt;
 		bool word_chk = false;
 		
-		for(int j=0;front_txt.size();j++)
+		for(int j=0; j<front_txt.size() ; j++)
 		{
 			if(txt[j] != front_txt[j])
 			{
