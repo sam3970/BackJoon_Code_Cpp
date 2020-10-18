@@ -13,6 +13,18 @@ void move()
 #if DEB
 			cout << "location: "<<location[i] << endl;
 #endif
+
+	int x = location[i] / 4, y = location[i] % 4;
+			// 8번 move
+		for (int j = 0; j < 8; j++) {
+			int cur_dir = (d[x][y] + j) % 8;
+			int nx = x + dir[cur_dir][0], ny = y + dir[cur_dir][1];
+			// 갈 수 없는 벽 만들기
+			if (nx < 0 || nx >= 4 || ny < 0 || ny >= 4)
+				continue;
+			// 상어 존재
+			if (g[nx][ny] == -1)
+				continue;
 }
 
 int main() {
