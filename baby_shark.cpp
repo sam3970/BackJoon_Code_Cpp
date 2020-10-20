@@ -25,6 +25,17 @@ void move()
 			// 상어 존재
 			if (g[nx][ny] == -1)
 				continue;
+
+			// 빈 공간(Empty Space)
+			if (g[nx][ny] == 0) 
+			{
+				location[i] = 4 * nx + ny;
+				g[x][y] = 0;
+				d[x][y] = -1; //쓰레기값임. 어차피 의미 없음.
+				g[nx][ny] = i;
+				d[nx][ny] = cur_dir;
+				break;
+			}
 }
 
 int main() {
