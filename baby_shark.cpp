@@ -42,11 +42,13 @@ void move()
 						break;
 					}
 
-					// 다른 물고기가 있어 자리를 바꿈
+					// 다른 물고기가 존재한다면
 					if (g[nx][ny] > 0) 
 					{
 						location[i] = 4 * nx + ny;
 						location[g[nx][ny]] = 4 * x + y;
+						
+						//자리 변경
 						g[x][y] = g[nx][ny];
 						d[x][y] = d[nx][ny];
 						g[nx][ny] = i;
