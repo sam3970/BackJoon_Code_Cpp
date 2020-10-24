@@ -27,7 +27,7 @@ void move()
 					if (nx < 0 || nx >= 4 || ny < 0 || ny >= 4)
 					continue;
 					
-					// 상어 존재
+					// 아기 상어 존재
 					if (g[nx][ny] == -1)
 						continue;
 
@@ -36,7 +36,7 @@ void move()
 					{
 						location[i] = 4 * nx + ny;
 						g[x][y] = 0;
-						d[x][y] = -1; //쓰레기값임. 어차피 의미 없음.
+						d[x][y] = -1; //trash value.
 						g[nx][ny] = i;
 						d[nx][ny] = cur_dir;
 						break;
@@ -57,27 +57,70 @@ void move()
 					}
 				}
 			}
-
+			
+#if DEB
+		for (int i = 0; i < 4; i++) 
+		{
+			for (int j = 0; j < 4; j++) 
+			{
+				cout << '(' << g[i][j] << ", " << d[i][j] << ")\t";
+			}
+			cout << "\n";
+		}
+		cout << "-------------------------------\n";
+#endif
+	}
 			
 }
 
-int main() {
+void backtrack(int x, int y, int cnt) 
+{
+	// 물고기부터 옮기기
+	move();
+	//backtrack(int x, int y, int cnt); //recursor function (dp)
+#if BACK
+	cout << "----------cnt: " << cnt << "-----------\n";
+	for (int i = 0; i < 4; i++) 
+	{
+		for (int j = 0; j < 4; j++) 
+		{
+			cout << '(' << g[i][j] << ", " << d[i][j] << ")\t";
+		}
+		cout << "\n";
+	}
+	cout << "-------------------------------\n";
+#endif
+	
+	int nx = x; 
+	int ny = y;
+	//2020-10-23 여기까지..
+}
+
+
+int main() 
+{
 	for (int i = 0; i < 4; i++)
-		for (int j = 0; j < 4; j++) {
+		for (int j = 0; j < 4; j++) 
+		{
 			cin >> g[i][j] >> d[i][j];
 			d[i][j]--;
 			location[g[i][j]] = i * 4 + j;
 		}
+	
 	int gg = g[0][0];
 	location[g[0][0]] = -1;
 	g[0][0] = -1;
 
 #if DEB
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
+	for (int i = 0; i < 4; i++) 
+	{
+		for (int j = 0; j < 4; j++) 
+		{
 			cout << '(' << g[i][j] << ", " << d[i][j] << ")\t";
 		}
 		cout << "\n";
 	}
 	cout << "-------------------------------\n";
 	move();
+#endif
+}
