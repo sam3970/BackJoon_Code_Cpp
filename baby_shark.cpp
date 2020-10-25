@@ -93,7 +93,21 @@ void backtrack(int x, int y, int cnt)
 	
 	int nx = x; 
 	int ny = y;
-	//2020-10-23 여기까지..
+	
+
+	// 마지막임을 체크하는 flag
+	bool flag = false;
+	// max 3 move
+	for (int i = 1; i <= 3; i++) {
+		nx += dir[d[x][y]][0];
+		ny += dir[d[x][y]][1];
+		// 끝 벽
+		if (nx < 0 || nx >= 4 || ny < 0 || ny >= 4)
+			break;
+		// 공백(빈칸)
+		if (g[nx][ny] == 0)
+			continue;
+
 }
 
 
