@@ -108,6 +108,19 @@ void backtrack(int x, int y, int cnt)
 		if (g[nx][ny] == 0)
 			continue;
 
+		// 잡아 먹을 물고기 존재(backtrack 기법이용)
+		flag = true;
+		int pg[4][4];
+		int pd[4][4];
+		int plocation[17];
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				pg[i][j] = g[i][j];
+				pd[i][j] = d[i][j];
+				plocation[4 * i + j + 1] = location[4 * i + j + 1];
+			}
+		}
+
 }
 
 
