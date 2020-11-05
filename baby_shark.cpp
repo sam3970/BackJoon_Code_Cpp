@@ -150,4 +150,7 @@ int main()
 	cout << "-------------------------------\n";
 	move();
 #endif
+
+	backtrack(0,0,gg);
+	cout<<ans<<endl;
 }
