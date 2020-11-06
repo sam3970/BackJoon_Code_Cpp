@@ -153,4 +153,6 @@ int main()
 
 	backtrack(0,0,gg);
 	cout<<ans<<endl;
+	
+	//return 0;
 }
