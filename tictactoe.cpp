@@ -84,5 +84,5 @@ int backtracking(char turn)
 
 int main()
 {
-
+	return;
 }
